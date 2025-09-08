@@ -1,0 +1,4 @@
+[user]
+	name = vvvetroff
+[alias]
+	tree = log --oneline --graph --decorate --all
