@@ -19,6 +19,6 @@ return {
     { '<leader>f"', function() require("snacks").picker.registers() end, desc="Pick from Registers" },
     { "<leader>fh", function() require("snacks").picker.help() end, desc="Search in Help Pages" },
     { '<leader>fm', function() require("snacks").picker.man() end, desc="Search in Man Pages" },
-    { '<leader>fk', function() require("snacks").picker.keymaps() end, desc="Search from Keymaps" },
+    { '<leader>fk', function() require("snacks").picker.keymaps() end, desc="Search from Keymaps" }
   }
 }
