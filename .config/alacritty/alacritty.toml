@@ -1,7 +1,9 @@
 import = ["~/.config/alacritty/themes/vscode.toml"]
 
+# for new machines, update absolute path of ZDOTDIR
 [env]
 TERM = "screen-256color"
+ZDOTDIR = "/Users/vvvetroff/.config/zsh"
 
 [window]
 padding.x = 0
