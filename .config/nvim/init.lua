@@ -32,6 +32,7 @@ map("v", "J", ":m '>+1<CR>gv=gv",																		{ desc = "Move Selected Code 
 map("n", "<leader>q", ":q<CR>", 																		{ desc = "Quit" })
 map("n", "<leader>cd", function() vim.diagnostic.open_float() end, 	{ desc = "View diagnostic" })
 map("n", "<leader>L", ":Lazy<CR>", 																	{ desc = "Open Lazy" })
+map({ "n", "v" }, "<leader>s", "1z=", 															  { desc = "Correct Spelling" })
 
 -- load lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
