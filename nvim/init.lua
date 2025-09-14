@@ -18,6 +18,7 @@ vim.opt.mouse = ""
 vim.opt.clipboard:append("unnamedplus")
 vim.opt.cursorline = true
 vim.g.python_highlight_all = 1
+
 -- set keymaps
 local map = vim.keymap.set
 map("n", "+", "<C-a>",																							{ desc = "Increment Number" })
