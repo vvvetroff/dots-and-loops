@@ -23,7 +23,6 @@ alias dv="deactivate"
 alias szsh="source ~/.config/zsh/.zshrc"
 alias stmux="source ~/.config/tmux/tmux.conf"
 alias gs="git status"
-# test test test
 
 # - export
 export PATH="/usr/local/Cellar/python@3.12/3.12.7/bin:$PATH"
@@ -40,8 +39,6 @@ zstyle :prompt:pure:git:dirty color '#d7ba7d'
 zstyle :prompt:pure:virtualenv color '#d7ba7d'
 zstyle :prompt:pure:prompt:success color '#56b97f'
 zstyle :prompt:pure:execution_time color '#c586c0'
-
-
 prompt pure
 
 # - fzf

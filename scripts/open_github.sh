@@ -3,9 +3,9 @@ url=$(git remote get-url origin)
 
 if [[ $url == *github.com* ]]; then
     if [[ $url == git@* ]]; then
-        url="${url#git@}"
-        url="${url/://}" 
-        url="https://$url"
+			url="${url#git@}"
+			url="${url/://}" 
+			url="https://$url"
     fi
     open "$url"
 else
