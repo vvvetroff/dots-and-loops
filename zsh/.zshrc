@@ -12,17 +12,23 @@ setopt HIST_IGNORE_DUPS
 setopt SHARE_HISTORY
 
 # - aliases
+# -- basic
 alias vi=nvim 
 alias vim=nvim
 alias python3=python3.12
 alias love="/Applications/love.app/Contents/MacOS/love"
 alias l="eza -la"
+# -- python venv
 alias av="source bin/activate"
 alias dv="deactivate"
-# alias pfc="find . -type f ! -name '.*' | wc -l"
+# -- sourcing
 alias szsh="source ~/.config/zsh/.zshrc"
 alias stmux="source ~/.config/tmux/tmux.conf"
+# -- git
 alias gs="git status"
+alias gcob="git checkout -b"
+alias gcm="git commit -m"
+alias gpom="git push origin main"
 
 # - export
 export PATH="/usr/local/Cellar/python@3.12/3.12.7/bin:$PATH"
