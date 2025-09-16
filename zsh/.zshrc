@@ -29,6 +29,7 @@ alias gs="git status"
 alias gcob="git checkout -b"
 alias gcm="git commit -m"
 alias gpom="git push origin main"
+alias lg="lazygit"
 
 # - export
 export PATH="/usr/local/Cellar/python@3.12/3.12.7/bin:$PATH"
