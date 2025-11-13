@@ -17,12 +17,12 @@ alias vi=nvim
 alias vim=nvim
 alias python3=python3.12
 alias love="/Applications/love.app/Contents/MacOS/love"
-alias l="eza -la"
+alias l="ls -C -t -U -A -p --color=auto"
 # -- python venv
-alias av="source bin/activate"
+alias av="source venv/bin/activate"
 alias dv="deactivate"
 # -- sourcing
-alias szsh="source ~/.config/zsh/.zshrc"
+alias src="source ~/.config/zsh/.zshrc"
 alias stmux="source ~/.config/tmux/tmux.conf"
 # -- git
 alias gs="git status"
@@ -30,9 +30,11 @@ alias gcob="git checkout -b"
 alias gcm="git commit -m"
 alias gpom="git push origin main"
 alias lg="lazygit"
+alias nr="vim ~/Documents/notebook/repository/inbox/*.md"
 
 # - export
 export PATH="/usr/local/Cellar/python@3.12/3.12.7/bin:$PATH"
+export PATH="/Users/vvvetroff/.config/scripts:$PATH"
 typeset -U path
 export PATH
 export EDITOR="nvim"
