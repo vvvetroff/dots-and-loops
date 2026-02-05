@@ -1,9 +1,6 @@
-# vvvetroff's (cax) config files
+# ~/.config
 
-I try to put everything relevant to the terminal/shell experience within the .config dir.
-That way, I do not have to consult ".tmux.conf" file or the ".zshrc" file then go to "~/.config/nvim".
-Keeps things organized and in one place.
-- With the exception of the .gitconfig file
+Everything terminal configuration related is contained within the `~/.config` dir; keeps things nice and organized
+- With the exception of the `~/.ssh/config`
 
-This repo would not have been possible without GNU Stow.
-Thank you Adrian Garcia for putting me on!
+This repo would not have been possible without GNU Stow. Thank you [Adrian Garcia](https://github.com/AdrianG0954) for putting me on!
