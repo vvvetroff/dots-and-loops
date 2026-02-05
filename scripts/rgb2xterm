@@ -1,0 +1,33 @@
+#!/usr/bin/python3
+
+# from chatgpt
+def rgb_to_xterm(r: int, g: int, b: int):
+    # 6x6x6 cube levels
+    steps = [0x00, 0x5f, 0x87, 0xaf, 0xd7, 0xff]
+
+    # Find nearest cube color
+    def nearest_level(val: int):
+        return min(steps, key=lambda x: abs(x - val))
+
+    r_c, g_c, b_c = nearest_level(r), nearest_level(g), nearest_level(b)
+    cube_index = 16 + 36 * steps.index(r_c) + 6 * steps.index(g_c) + steps.index(b_c)
+
+    # Find nearest gray
+    gray = int(round(((r + g + b) / 3 - 8) / 10))
+    gray = max(0, min(23, gray))
+    gray_val = 8 + 10 * gray
+    gray_index = 232 + gray
+
+    # Pick closer
+    def dist(a: int, b: int, c: int, x: int, y: int, z: int):
+        return (a - x) ** 2 + (b - y) ** 2 + (c - z) ** 2
+
+    d_cube = dist(r, g, b, r_c, g_c, b_c)
+    d_gray = dist(r, g, b, gray_val, gray_val, gray_val)
+
+    return cube_index if d_cube <= d_gray else gray_index
+
+if __name__ == "__main__":
+    h = input('Enter hex: ').lstrip('#')
+    r, g, b = tuple(int(h[i:i+2], 16) for i in (0, 2, 4))
+    print(f"xterm color: {rgb_to_xterm(r,g,b)}")

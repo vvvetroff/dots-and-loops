@@ -17,7 +17,8 @@ alias vi=nvim
 alias vim=nvim
 alias python3=python3.12
 alias love="/Applications/love.app/Contents/MacOS/love"
-alias l="ls -C -t -U -A -p --color=auto"
+alias l="ls -C -t -U -p --color=auto"
+alias la="ls -C -t -U -A -p --color=auto"
 # -- python venv
 alias av="source venv/bin/activate"
 alias dv="deactivate"
@@ -31,6 +32,8 @@ alias gcm="git commit -m"
 alias gpom="git push origin main"
 alias lg="lazygit"
 alias nr="vim ~/Documents/notebook/repository/inbox/*.md"
+alias ff="fastfetch"
+alias diary="pass self/jrnl -c ; jrnl diary"
 
 # - export
 export PATH="/usr/local/Cellar/python@3.12/3.12.7/bin:$PATH"
@@ -42,12 +45,12 @@ export MANPAGER="nvim +Man!"
 
 # prompt
 autoload -U promptinit; promptinit
-zstyle :prompt:pure:path color '#569cd6'
-zstyle :prompt:pure:git:branch color '#9cdcfe'
-zstyle :prompt:pure:git:dirty color '#d7ba7d'
-zstyle :prompt:pure:virtualenv color '#d7ba7d'
-zstyle :prompt:pure:prompt:success color '#56b97f'
-zstyle :prompt:pure:execution_time color '#c586c0'
+zstyle :prompt:pure:path color '#7aa2f7'
+zstyle :prompt:pure:git:branch color '#7dcfff'
+zstyle :prompt:pure:git:dirty color '#e0af68'
+zstyle :prompt:pure:virtualenv color '#e0af68'
+zstyle :prompt:pure:prompt:success color '#9ece6a'
+zstyle :prompt:pure:execution_time color '#bb9af7'
 prompt pure
 
 # - fzf
@@ -55,3 +58,6 @@ source <(fzf --zsh)
 
 # syntax highlighting
 [[ -f "$HOME/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]] && source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+echo " "
+fastfetch

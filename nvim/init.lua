@@ -6,6 +6,7 @@ vim.opt.tabstop = 2
 vim.opt.cursorcolumn = false
 vim.opt.ignorecase = true
 vim.opt.shiftwidth = 2
+vim.opt.linebreak = true
 vim.opt.smartindent = true
 vim.opt.number = true
 vim.opt.termguicolors = true
@@ -35,15 +36,6 @@ map("n", "<leader>cd", function() vim.diagnostic.open_float() end, 	{ desc = "Vi
 map("n", "<leader>L", ":Lazy<CR>", 																	{ desc = "Open Lazy", silent = true  })
 map({ "n", "v" }, "<leader>s", "1z=", 														  { desc = "Correct Spelling", silent = true  })
 map("n", "<leader>w", ":w<CR>", 																		{ desc = "Quit Buffer", silent = true  })
-map("n", "<leader>ndd", ":!rm '%:p'<CR>:bd<CR>", { silent = true })
-map("n", "<leader>nn", function ()
-	local filename = vim.fn.input("New note: "):gsub(' ', '-')
-	local year = vim.fn.system('date +"%Y-%m-%d"'):gsub('\n','')
-	if filename ~= "" then
-		vim.cmd(string.format([[vnew ~/Documents/notebook/inbox/%s_%s.md]], year, filename))
-	end
-end)
-
 
 -- load lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"

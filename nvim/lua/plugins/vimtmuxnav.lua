@@ -1,4 +1,3 @@
--- why does tmux have italicezed comments, but not normal vim??????????
 return {
   "christoomey/vim-tmux-navigator",
 	lazy = false,

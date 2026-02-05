@@ -9,14 +9,6 @@ return {
   config = function()
 		-- luasnip
 		local ls = require('luasnip')
-		local s = ls.snippet
-		local t = ls.text_node
-		local i = ls.insert_node
-		ls.add_snippets("markdown", {
-			s("hello", {
-				t('print("hello world")')
-			})
-		})
     ls.setup({ enable_autosnippets = true })
 
 		-- lsp and autocompletions

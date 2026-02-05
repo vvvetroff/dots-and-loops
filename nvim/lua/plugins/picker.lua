@@ -11,7 +11,6 @@ return {
       },
     },
 		indent = { enabled = true },
-		notifier = { enabled = true },
   },
   keys = {
     { "<leader>ff", function() require("snacks").picker.files() end, desc="Find Files in cwd" },
@@ -20,8 +19,6 @@ return {
     { "<leader>fh", function() require("snacks").picker.help() end, desc="Search in Help Pages" },
     { '<leader>fm', function() require("snacks").picker.man() end, desc="Search in Man Pages" },
     { '<leader>fk', function() require("snacks").picker.keymaps() end, desc="Search from Keymaps" },
-		{ "<leader>fn", function() require("snacks").picker.files({ cwd = '~/Documents/notebook/' }) end, desc="Find Notes" },
 		{ "<leader>zf", function() require("snacks").picker.grep() end, desc="Grep Word" },
-		{ "<leader>zn", function() require("snacks").picker.grep({ cwd = '~/Documents/notebook/' }) end, desc="Grep Notes" },
   }
 }
