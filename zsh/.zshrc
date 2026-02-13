@@ -16,7 +16,7 @@ setopt SHARE_HISTORY
 alias v=nvim
 alias vi=nvim 
 alias vim=nvim
-alias python3=python3.12
+alias python3=python3.14
 alias love="/Applications/love.app/Contents/MacOS/love"
 alias l="ls -C -t -U -p --color=auto"
 alias la="ls -C -t -U -A -p --color=auto"
@@ -34,7 +34,6 @@ alias ff="fastfetch"
 alias diary="pass self/jrnl -c ; jrnl diary"
 
 # - export
-export PATH="/usr/local/Cellar/python@3.12/3.12.7/bin:$PATH"
 export PATH="$HOME/.config/scripts:$PATH"
 typeset -U path
 export PATH
@@ -59,5 +58,4 @@ source <(fzf --zsh)
 [[ -f "$HOME/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]] && source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # - src printout
-echo " "
 fastfetch

@@ -1,0 +1,21 @@
+#!/usr/bin/python3
+def binomcdf(n: int, p: float, x: int) -> None:
+    import math
+    result = 0.0
+    current_binom = 1 # nCr(n, 0)
+    for k in range(1, x+1):
+        current_binom = current_binom * ((n - (k - 1)) / k)
+        result += current_binom * math.pow(p, k) * math.pow((1-p), (n-k))
+
+    print(f"\nn = {n}, p = {p}, x = {x}\n")
+    print(f"P(X ≤ {x}) = {result:.05f}")
+    print(f"P(X > {x}) = {1 - result:.05f}")
+    return
+
+if __name__ == "__main__":
+    import sys
+    if (len(sys.argv) < 4):
+        print("Usage: binomcdf <n> <p> <x>")
+    else:
+        n, p, x = int(sys.argv[1]), float(sys.argv[2]), int(sys.argv[3])
+        binomcdf(n, p, x)
