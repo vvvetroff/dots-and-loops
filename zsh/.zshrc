@@ -34,6 +34,7 @@ alias ff="fastfetch"
 alias diary="pass self/jrnl -c ; jrnl diary"
 
 # - export
+export PATH="/usr/local/Cellar/python@3.12/3.12.7/bin:$PATH"
 export PATH="$HOME/.config/scripts:$PATH"
 typeset -U path
 export PATH

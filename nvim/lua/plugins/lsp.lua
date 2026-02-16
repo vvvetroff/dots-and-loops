@@ -12,7 +12,7 @@ return {
     ls.setup({ enable_autosnippets = true })
 
 		-- lsp and autocompletions
-    vim.lsp.enable({"lua_ls", "basedpyright", "clangd", "tinymist", "actions-languageserver"})
+    vim.lsp.enable({"lua_ls", "basedpyright", "clangd", "tinymist"})
     local capabilities = vim.tbl_deep_extend(
       'force',
       vim.lsp.protocol.make_client_capabilities(),
