@@ -1,6 +1,6 @@
 return {
 	{
-		dir = "~/Documents/projects/tinyhash.nvim",
+		dir = "~/Projects/tinyhash.nvim",
 		config = function ()
 			require("tinyhash").setup()
 		end
