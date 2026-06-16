@@ -35,7 +35,7 @@ map("n", "<leader>Q", ":q<CR>", 																		{ desc = "Force Quit Buffer", 
 map("n", "<leader>cd", function() vim.diagnostic.open_float() end, 	{ desc = "View diagnostic", silent = true  })
 map("n", "<leader>L", ":Lazy<CR>", 																	{ desc = "Open Lazy", silent = true  })
 map({ "n", "v" }, "<leader>s", "1z=", 														  { desc = "Correct Spelling", silent = true  })
-map("n", "<leader>w", ":w<CR>", 																		{ desc = "Quit Buffer", silent = true  })
+map("n", "<leader>w", ":w<CR>", 																		{ desc = "Write Buffer", silent = true  })
 
 -- load lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
