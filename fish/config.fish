@@ -35,6 +35,7 @@ abbr --add gpom git push origin main
 abbr --add lg lazygit
 abbr --add ff fastfetch
 abbr --add c clear
+abbr --add cl clear
 abbr --add jrnl " jrnl"
 abbr --add diary " jrnl diary"
 abbr --add domp "docker compose"
