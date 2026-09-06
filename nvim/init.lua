@@ -59,6 +59,8 @@ require("lazy").setup({
 	change_detection = { enabled = false },
 })
 
-for _, path in ipairs(vim.api.nvim_get_runtime_file("snippets/*.lua", true)) do
-	loadfile(path)()
+if not vim.g.vscode then
+	for _, path in ipairs(vim.api.nvim_get_runtime_file("snippets/*.lua", true)) do
+		loadfile(path)()
+	end
 end

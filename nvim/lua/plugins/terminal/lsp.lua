@@ -1,7 +1,7 @@
 return {
   "neovim/nvim-lspconfig",
   dependencies = {
-		{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate", opts = { highlight = { enabled = true } } },
+		{ "nvim-treesitter/nvim-treesitter", branch = "main", build = ":TSUpdate", opts = { highlight = { enabled = true } } },
     { "mason-org/mason.nvim", version = "^1.0.0", opts = { ui = { backdrop = 100, border = "rounded" } } },
     { "L3MON4D3/LuaSnip", version = "v2.*", build = "make install_jsregexp" },
     { "saghen/blink.cmp", opts = { snippets = { preset = "luasnip" }, completion = { ghost_text = { enabled = false } } } },
