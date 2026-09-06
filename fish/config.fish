@@ -25,8 +25,8 @@ abbr --add vi nvim
 abbr --add vim nvim
 abbr --add python3 python3.14
 abbr --add love /Applications/love.app/Contents/MacOS/love
-abbr --add l ls -C -t -U -p --color=auto
-abbr --add la ls -C -t -U -A -p --color=auto
+abbr --add l LC_COLLATE=en_US ls -l -v -C --color=auto
+abbr --add la LC_COLLATE=en_US ls -l -a -v -C --color=auto
 abbr --add src source ~/.config/fish/config.fish
 abbr --add smux source ~/.config/tmux/tmux.conf
 abbr --add gs git status
