@@ -1,13 +1,4 @@
-tap "d12frosted/emacs-plus"
-tap "hashicorp/tap"
-tap "homebrew-zathura/zathura"
-tap "homebrew/cask-fonts"
-tap "homebrew/services"
-tap "jandedobbeleer/oh-my-posh"
-tap "jtaylortech/journalot"
 tap "nikitabobko/tap"
-# TIFF library and utilities
-brew "libtiff"
 # Spell checker with better logic than ispell
 brew "aspell"
 # Core application library for C
@@ -22,12 +13,12 @@ brew "bash"
 brew "bat"
 # Arbitrary precision numeric processing language
 brew "bc"
-# Version manager for neovim
-brew "bob"
+# TIFF library and utilities
+brew "libtiff"
+# OpenType text shaping engine
+brew "harfbuzz"
 # Cross-platform make
 brew "cmake"
-# Console Matrix
-brew "cmatrix"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
 # Apjanke's fork of the classic cowsay project
@@ -36,14 +27,10 @@ brew "cowsay"
 brew "deno"
 # Perl lib for reading and writing EXIF metadata
 brew "exiftool"
-# Modern, maintained replacement for ls
-brew "eza"
 # Like neofetch, but much faster because written mostly in C
 brew "fastfetch"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
-# OpenType text shaping engine
-brew "harfbuzz"
 # Create thumbnails for your video files
 brew "ffmpegthumbnailer"
 # User-friendly command-line shell for UNIX-like operating systems
@@ -56,34 +43,32 @@ brew "gawk"
 brew "gdb"
 # GitHub command-line tool
 brew "gh"
-# Open-source GitLab command-line tool
-brew "glab"
 # GNU implementation of the famous stream editor
 brew "gnu-sed"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Package compiler and linker metadata toolkit
+brew "pkgconf"
 # Image processing tools collection
 brew "graphicsmagick"
-# Advanced HTML-to-text converter
-brew "html2text"
 # Tools and libraries to manipulate images in select formats
 brew "imagemagick"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # Command-line note taker
 brew "jrnl"
-# Open-source, cross-platform JavaScript runtime environment
-brew "node"
-# Interactive environments for writing and running code
-brew "jupyterlab"
 # Simple terminal UI for git commands
 brew "lazygit"
 # Powerful, lightweight programming language
 brew "lua"
 # Package manager for the Lua programming language
 brew "luarocks"
+# Open-source, cross-platform JavaScript runtime environment
+brew "node"
 # Quickly generate a temporary email address
 brew "mailsy"
+# Mac App Store command-line interface
+brew "mas"
 # Powerful, clean, object-oriented scripting language
 brew "ruby", link: false
 # Provides a formatted and highlighted view of Markdown files in Terminal
@@ -94,8 +79,6 @@ brew "mingw-w64"
 brew "tree-sitter"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
-# Retrieves currently playing media, and simulates media actions
-brew "nowplaying-cli"
 # Development kit for the Java programming language
 brew "openjdk"
 # Display directories as trees (with optional color/HTML output)
@@ -104,8 +87,6 @@ brew "tree"
 brew "pass"
 # Pinentry for GPG on Mac
 brew "pinentry-mac"
-# Package compiler and linker metadata toolkit
-brew "pkgconf"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
 # Pretty, minimal and fast ZSH prompt
@@ -115,31 +96,36 @@ brew "putty"
 # Password generator
 brew "pwgen"
 # Interpreted, interactive, object-oriented programming language
-brew "python@3.12", link: false
+brew "python@3.12"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Rust toolchain installer
 brew "rustup"
 # Fuzzy Finder in rust!
 brew "sk"
-# Prints a steam locomotive if you type sl instead of ls
-brew "sl"
 # Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
 # User interface to the TELNET protocol
 brew "telnet"
+# Official tldr client written in Rust
+brew "tlrc"
 # Terminal multiplexer
 brew "tmux"
+# Parser generator tool
+brew "tree-sitter-cli"
 # Markup-based typesetting system
 brew "typst"
 # Access X11 clipboards from the command-line
 brew "xclip"
 # Programming language designed for robustness, optimality, and clarity
 brew "zig"
-cask "aerospace"
+# AeroSpace is an i3-like tiling window manager for macOS
+cask "nikitabobko/tap/aerospace", trusted: true
 cask "font-hack-nerd-font"
 # JetBrains tools manager
 cask "jetbrains-toolbox"
+# Open-source firewall to block unknown outgoing connections
+cask "lulu"
 # Provides updates to various Microsoft products
 cask "microsoft-auto-update"
 # Word processor
@@ -154,36 +140,24 @@ cask "stats"
 cask "wezterm"
 # Open-source version of the X.Org X Window System
 cask "xquartz"
-vscode "adpyke.codesnap"
-vscode "alexcvzz.vscode-sqlite"
-vscode "anysphere.cpptools"
-vscode "anysphere.cursorpyright"
-vscode "anysphere.remote-ssh"
-vscode "enkia.tokyo-night"
-vscode "esbenp.prettier-vscode"
-vscode "formulahendry.code-runner"
-vscode "hediet.vscode-drawio"
-vscode "llvm-vs-code-extensions.vscode-clangd"
-vscode "mechatroner.rainbow-csv"
+mas "GarageBand", id: 682658836
+mas "Hidden Bar", id: 1452453066
+mas "hide.me", id: 953040671
+mas "iMovie", id: 408981434
+mas "Windows App", id: 1295203466
+mas "Xcode", id: 497799835
+vscode "anthropic.claude-code"
+vscode "asvetliakov.vscode-neovim"
+vscode "davidanson.vscode-markdownlint"
+vscode "dbaeumer.vscode-eslint"
+vscode "detachhead.basedpyright"
+vscode "leanprover.lean4"
+vscode "ms-python.black-formatter"
 vscode "ms-python.debugpy"
-vscode "ms-python.isort"
 vscode "ms-python.python"
 vscode "ms-python.vscode-python-envs"
-vscode "ms-toolsai.jupyter"
-vscode "ms-toolsai.jupyter-keymap"
-vscode "ms-toolsai.jupyter-renderers"
-vscode "ms-toolsai.vscode-jupyter-cell-tags"
-vscode "ms-toolsai.vscode-jupyter-slideshow"
-vscode "ms-vscode.cmake-tools"
-vscode "ms-vscode.cpptools-themes"
-vscode "ms-vscode.hexeditor"
-vscode "myriad-dreamin.tinymist"
-vscode "qwtel.sqlite-viewer"
-vscode "ritwickdey.liveserver"
-vscode "sumneko.lua"
+vscode "pomdtr.excalidraw-editor"
 vscode "tailscale.vscode-tailscale"
+vscode "tamasfe.even-better-toml"
 vscode "tomoki1207.pdf"
-vscode "twxs.cmake"
-vscode "vadimcn.vscode-lldb"
-vscode "vscodevim.vim"
 npm "fast-cli"

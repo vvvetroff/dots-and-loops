@@ -11,7 +11,6 @@ set pure_color_git_branch cyan
 
 # - paths
 fish_add_path ~/.config/scripts/
-fish_add_path ~/.local/share/flutter/bin
 fish_add_path /usr/local/opt/ruby/bin
 
 # - variables
@@ -43,17 +42,3 @@ abbr --add domp "docker compose"
 # - sourcing
 fzf --fish | source
 
-# - functions
-function mkcd --description "Create a directory and then cd into it"
-    mkdir $argv[1]
-    cd $argv[1]
-end
-
-function multicd
-    echo cd (string repeat -n (math (string length -- $argv[1]) - 1) ../)
-end
-abbr --add dotdot --regex '^\.\.+$' --function multicd
-
-# vscode
-string match -q "$TERM_PROGRAM" "vscode"
-and . (code --locate-shell-integration-path fish)
