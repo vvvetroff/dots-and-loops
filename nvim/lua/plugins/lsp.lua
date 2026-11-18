@@ -1,0 +1,73 @@
+-- language server protocol config
+-- credit to hamvocke/dotfiles
+vim.pack.add({
+	"https://github.com/neovim/nvim-lspconfig", -- default configs for LSPs
+	-- see `:h lsp-quickstart` for more details.
+	"https://github.com/mason-org/mason.nvim", -- package manager
+	"https://github.com/mason-org/mason-lspconfig.nvim", -- lspconfig bridge
+	"https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim", -- auto installer
+})
+
+require("mason").setup()
+require("mason-lspconfig").setup()
+
+local lsp_servers = {
+	lua_ls = {
+		-- https://luals.github.io/wiki/settings/ | `:h nvim_get_runtime_file`
+		-- no need for a .luarc.json file at the root of the dir!
+		Lua = { workspace = { library = vim.api.nvim_get_runtime_file("lua", true) } },
+	},
+	basedpyright = {},
+	cssls = {},
+	eslint = {},
+	ts_ls = {},
+	clangd = {},
+}
+
+require("mason-tool-installer").setup({
+	ensure_installed = vim.tbl_keys(lsp_servers),
+})
+
+for server, config in pairs(lsp_servers) do
+	vim.lsp.config(server, {
+		settings = config,
+
+		-- Only create the keymaps if the server attaches successfully
+		on_attach = function(_, bufnr)
+			vim.keymap.set(
+				"n",
+				"grd",
+				require("fzf-lua").lsp_definitions,
+				{ buffer = bufnr, desc = "Go to definition" }
+			)
+			vim.keymap.set(
+				"n",
+				"gri",
+				require("fzf-lua").lsp_implementations,
+				{ buffer = bufnr, desc = "Go to implementation" }
+			)
+			vim.keymap.set(
+				"n",
+				"grt",
+				require("fzf-lua").lsp_typedefs,
+				{ buffer = bufnr, desc = "Go to type definition" }
+			)
+			vim.keymap.set("n", "gra", vim.lsp.buf.code_action, { buffer = bufnr, desc = "Code action" })
+			vim.keymap.set("n", "grn", vim.lsp.buf.rename, { buffer = bufnr, desc = "Rename" })
+			vim.keymap.set("n", "grr", require("fzf-lua").lsp_references, { buffer = bufnr, desc = "References" })
+			vim.keymap.set(
+				"n",
+				"gO",
+				require("fzf-lua").lsp_document_symbols,
+				{ buffer = bufnr, desc = "Open Document Symbols" }
+			)
+			vim.keymap.set(
+				"n",
+				"gW",
+				require("fzf-lua").lsp_workspace_symbols,
+				{ buffer = bufnr, desc = "Open Workspace Symbols" }
+			)
+			vim.keymap.set("n", "grf", vim.lsp.buf.format, { buffer = bufnr, desc = "Format" })
+		end,
+	})
+end
