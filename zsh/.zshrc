@@ -1,8 +1,15 @@
 # - default
 DISABLE_AUTO_TITLE="true"
 autoload -U colors && colors
-autoload -U compinit && compinit
 zmodload zsh/complist
+autoload -U compinit && compinit
+zstyle ':completion:*' menu select   # arrow-key menu on Tab; delete if unwanted
+
+# - variables
+export EDITOR="nvim"
+export VISUAL="nvim"
+export MANPAGER="nvim +Man!"
+export LESSHISTFILE=/dev/null
 
 # - history
 HISTFILE=~/.config/zsh/.zsh_history
@@ -14,49 +21,37 @@ setopt SHARE_HISTORY
 
 # - basic aliases
 alias v=nvim
-alias vi=nvim 
+alias vi=nvim
 alias vim=nvim
-alias python3=python3.14
 alias love="/Applications/love.app/Contents/MacOS/love"
-alias l="ls -C -t -U -p --color=auto"
-alias la="ls -C -t -U -A -p --color=auto"
-
-# - sourcing aliases
+alias l="ls -t -U -p --color=auto"
+alias la="ls -t -U -A -p --color=auto"
+alias c=clear
+alias cl=clear
+alias domp="docker compose"
 alias src="source ~/.config/zsh/.zshrc"
-alias stmux="source ~/.config/tmux/tmux.conf"
-
-# - git aliases
+alias smux="source ~/.config/tmux/tmux.conf"
 alias gs="git status"
 alias gcm="git commit -m"
 alias gpom="git push origin main"
 alias lg="lazygit"
 alias ff="fastfetch"
-alias diary="pass self/jrnl -c ; jrnl diary"
 
 # - export
-export PATH="/usr/local/Cellar/python@3.12/3.12.7/bin:$PATH"
-export PATH="$HOME/.config/scripts:$PATH"
 typeset -U path
-export PATH
-export EDITOR="nvim"
-export MANPAGER="nvim +Man!"
-export LESSHISTFILE=-
+path="$HOME/.config/scripts:$PATH"
 
 # - prompt
 autoload -U promptinit; promptinit
-zstyle :prompt:pure:path color '#7aa2f7'
-zstyle :prompt:pure:git:branch color '#7dcfff'
-zstyle :prompt:pure:git:dirty color '#e0af68'
-zstyle :prompt:pure:virtualenv color '#e0af68'
-zstyle :prompt:pure:prompt:success color '#9ece6a'
-zstyle :prompt:pure:execution_time color '#bb9af7'
+zstyle :prompt:pure:git:branch color 'cyan'
+zstyle :prompt:pure:git:dirty color 'yellow'
+zstyle :prompt:pure:virtualenv color 'yellow'
+zstyle :prompt:pure:prompt:success color 'green'
+PURE_PROMPT_SYMBOL='$'
 prompt pure
 
 # - fzf
 source <(fzf --zsh)
-
-# - syntax highlighting
-[[ -f "$HOME/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]] && source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # - src printout
 fastfetch
