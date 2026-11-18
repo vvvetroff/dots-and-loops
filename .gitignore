@@ -1,14 +1,7 @@
-# whatever this is
-gtk-2.0/
-
-# nvim
-nvim/lazy-lock.json
-
 # tmux
 tmux/plugins/
 
 # zsh (old)
-zsh/plugins/
 zsh/.zcompdump
 zsh/.zcompdump-*
 zsh/.zsh_history
@@ -16,4 +9,7 @@ zsh/.zsh_history
 # fish
 fish/*
 !config.fish
+
+# stow
+.stow-local-ignore
 
